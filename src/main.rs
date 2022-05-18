@@ -14,8 +14,8 @@ use rand::Rng;
 
 const GRID: bool = false;
 //const CELL_SIZE: f32 = SCREEN_SIZE.0 / GRID_WIDTH as f32;
-const A: usize = 71;
-const B: usize = 70;
+const A: usize = 74; //eje x
+const B: usize = 71; //eje y
 
 #[allow(dead_code)]
 const BLINKER: [(usize, usize); 3] = [(4, 4), (4, 5), (4, 6)];
@@ -113,9 +113,9 @@ const GLIDER: [(usize, usize); 10] = [
     (2, 4),
     //Second Glider
     (2 + A, 2 + B),
-    (3 + A, 2 + B),
-    (2 + A, 3 + B),
     (1 + A, 3 + B),
+    (2 + A, 3 + B),
+    (1 + A, 4 + B),
     (3 + A, 4 + B),
 ];
 #[allow(dead_code)]
