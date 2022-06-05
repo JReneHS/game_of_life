@@ -4,7 +4,7 @@ mod types;
 
 use crate::grid::Grid;
 use crate::types::Point;
-use clap::{App, Arg};
+use clap::{Arg, Command};
 
 use ggez::event;
 use ggez::event::EventHandler;
@@ -14,8 +14,8 @@ use rand::Rng;
 
 const GRID: bool = false;
 //const CELL_SIZE: f32 = SCREEN_SIZE.0 / GRID_WIDTH as f32;
-const A: usize = 74; //eje x
-const B: usize = 71; //eje y
+const A: usize = 50;
+const B: usize = 75;
 
 #[allow(dead_code)]
 const BLINKER: [(usize, usize); 3] = [(4, 4), (4, 5), (4, 6)];
@@ -113,9 +113,9 @@ const GLIDER: [(usize, usize); 10] = [
     (2, 4),
     //Second Glider
     (2 + A, 2 + B),
-    (1 + A, 3 + B),
+    (3 + A, 2 + B),
     (2 + A, 3 + B),
-    (1 + A, 4 + B),
+    (1 + A, 3 + B),
     (3 + A, 4 + B),
 ];
 #[allow(dead_code)]
@@ -253,15 +253,15 @@ impl EventHandler for MainState {
         Ok(())
     }
     fn draw(&mut self, ctx: &mut Context) -> GameResult {
-        graphics::clear(ctx, graphics::BLACK);
+        graphics::clear(ctx, graphics::Color::BLACK);
         // Mesh builder
         let mut builder = graphics::MeshBuilder::new();
         // Init, otherwise doesn't work for some reason
         builder.rectangle(
             graphics::DrawMode::fill(),
             graphics::Rect::new(0., 0., 0., 0.),
-            graphics::BLACK,
-        );
+            graphics::Color::BLACK,
+        )?;
         // Draw cells
         for (idx, cell) in self.grid.cells.iter().enumerate() {
             if cell.is_alive() {
@@ -276,7 +276,7 @@ impl EventHandler for MainState {
                         self.config.cell_size,
                     ),
                     color,
-                );
+                )?;
             }
         }
         // Draw grid
@@ -293,7 +293,7 @@ impl EventHandler for MainState {
                         self.config.cell_size,
                     ),
                     color,
-                );
+                )?;
             }
         }
         let mesh = builder.build(ctx)?;
@@ -307,38 +307,38 @@ impl EventHandler for MainState {
 
 fn main() -> GameResult {
     // CLI
-    let matches = App::new("Game of Life")
+    let matches = Command::new("Game of Life")
         .version("0.1")
         .author("J. Rene H.S.")
         .arg(
-            Arg::with_name("width")
-                .short("w")
+            Arg::new("width")
+                .short('w')
                 .long("width")
                 .help("Grid width")
                 .value_name("width")
                 .takes_value(true)
                 .required(false)
-                .default_value("100"),
+                .default_value("500"),
         )
         .arg(
-            Arg::with_name("height")
-                .short("h")
+            Arg::new("height")
+                .short('h')
                 .long("height")
                 .help("Grid height")
                 .value_name("height")
                 .takes_value(true)
                 .required(false)
-                .default_value("100"),
+                .default_value("500"),
         )
         .arg(
-            Arg::with_name("initial_state")
-                .short("s")
+            Arg::new("initial_state")
+                .short('s')
                 .long("initial-state")
                 .help("Initial state options: blinker, toad, glider, glider-gun, random")
                 .value_name("initial_state")
                 .takes_value(true)
                 .required(false)
-                .default_value("glider"),
+                .default_value("random"),
         )
         .get_matches();
 
@@ -350,8 +350,8 @@ fn main() -> GameResult {
         .parse::<usize>()
         .unwrap();
     let initial_state = matches.value_of("initial_state").unwrap();
-    let screen_size = (500.0, 500.0);
-    let fps = 20;
+    let screen_size = (700.0, 700.0);
+    let fps = 30;
     // Set configuration
     let config: Config = Config {
         grid_width,
@@ -365,10 +365,10 @@ fn main() -> GameResult {
     // Setup ggez stuff
     let cb = ContextBuilder::new("Game of life", "J. Rene H.S.")
         .window_mode(ggez::conf::WindowMode::default().dimensions(screen_size.0, screen_size.1));
-    let (ctx, event_loop) = &mut cb.build()?; // `?` because the build function may fail
-    graphics::set_window_title(ctx, "Game of life");
+    let (mut ctx, event_loop) = cb.build()?;
+    graphics::set_window_title(&ctx, "Game of life");
     // Setup game state -> game loop
-    let mut state = MainState::new(ctx, config);
-    event::run(ctx, event_loop, &mut state)?;
-    Ok(())
+    let state = MainState::new(&mut ctx, config);
+
+    event::run(ctx, event_loop, state);
 }
