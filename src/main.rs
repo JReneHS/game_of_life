@@ -44,11 +44,284 @@ impl MainState {
             "toad" => {
                 start_cells_coords = TOAD.iter().map(|&p| p.into()).collect::<Vec<Point>>();
             }
-            "glider" => {
-                start_cells_coords = GLIDER.iter().map(|&p| p.into()).collect::<Vec<Point>>();
+            "gliderA" => {
+                start_cells_coords = GLIDER_A.iter().map(|&p| p.into()).collect::<Vec<Point>>();
+            }
+            "gliderB" => {
+                start_cells_coords = GLIDER_B.iter().map(|&p| p.into()).collect::<Vec<Point>>();
+            }
+            "gliderC" => {
+                start_cells_coords = GLIDER_C.iter().map(|&p| p.into()).collect::<Vec<Point>>();
+            }
+            "gliderD" => {
+                start_cells_coords = GLIDER_D.iter().map(|&p| p.into()).collect::<Vec<Point>>();
             }
             "blinker" => {
                 start_cells_coords = BLINKER.iter().map(|&p| p.into()).collect::<Vec<Point>>();
+            }
+            "collisionAAI180" => {
+                start_cells_coords = GLIDER_COLLISION_AAI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionABI180" => {
+                start_cells_coords = GLIDER_COLLISION_ABI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionACI180" => {
+                start_cells_coords = GLIDER_COLLISION_ACI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionADI180" => {
+                start_cells_coords = GLIDER_COLLISION_ADI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBBI180" => {
+                start_cells_coords = GLIDER_COLLISION_BBI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBCI180" => {
+                start_cells_coords = GLIDER_COLLISION_BCI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBDI180" => {
+                start_cells_coords = GLIDER_COLLISION_BDI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionCCI180" => {
+                start_cells_coords = GLIDER_COLLISION_CCI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionCDI180" => {
+                start_cells_coords = GLIDER_COLLISION_CDI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionDDI180" => {
+                start_cells_coords = GLIDER_COLLISION_DDI180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionAAP180" => {
+                start_cells_coords = GLIDER_COLLISION_AAP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionABP180" => {
+                start_cells_coords = GLIDER_COLLISION_ABP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionACP180" => {
+                start_cells_coords = GLIDER_COLLISION_ACP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionADP180" => {
+                start_cells_coords = GLIDER_COLLISION_ADP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBBP180" => {
+                start_cells_coords = GLIDER_COLLISION_BBP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBCP180" => {
+                start_cells_coords = GLIDER_COLLISION_BCP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBDP180" => {
+                start_cells_coords = GLIDER_COLLISION_BDP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionCCP180" => {
+                start_cells_coords = GLIDER_COLLISION_CCP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionCDP180" => {
+                start_cells_coords = GLIDER_COLLISION_CDP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionDDP180" => {
+                start_cells_coords = GLIDER_COLLISION_DDP180
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionAAI90" => {
+                start_cells_coords = GLIDER_COLLISION_AAI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionABI90" => {
+                start_cells_coords = GLIDER_COLLISION_ABI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionACI90" => {
+                start_cells_coords = GLIDER_COLLISION_ACI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionADI90" => {
+                start_cells_coords = GLIDER_COLLISION_ADI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBBI90" => {
+                start_cells_coords = GLIDER_COLLISION_BBI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBCI90" => {
+                start_cells_coords = GLIDER_COLLISION_BCI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBDI90" => {
+                start_cells_coords = GLIDER_COLLISION_BDI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionCCI90" => {
+                start_cells_coords = GLIDER_COLLISION_CCI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionCDI90" => {
+                start_cells_coords = GLIDER_COLLISION_CDI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionDDI90" => {
+                start_cells_coords = GLIDER_COLLISION_DDI90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionAAP90" => {
+                start_cells_coords = GLIDER_COLLISION_AAP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionABP90" => {
+                start_cells_coords = GLIDER_COLLISION_ABP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionACP90" => {
+                start_cells_coords = GLIDER_COLLISION_ACP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionADP90" => {
+                start_cells_coords = GLIDER_COLLISION_ADP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBBP90" => {
+                start_cells_coords = GLIDER_COLLISION_BBP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBCP90" => {
+                start_cells_coords = GLIDER_COLLISION_BCP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionBDP90" => {
+                start_cells_coords = GLIDER_COLLISION_BDP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionCCP90" => {
+                start_cells_coords = GLIDER_COLLISION_CCP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionCDP90" => {
+                start_cells_coords = GLIDER_COLLISION_CDP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "collisionDDP90" => {
+                start_cells_coords = GLIDER_COLLISION_DDP90
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "100collisionAA" => {
+                start_cells_coords = GLIDER_100_COLLISION_AA
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "100collisionAC" => {
+                start_cells_coords = GLIDER_100_COLLISION_AC
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "100collisionAH1" => {
+                start_cells_coords = GLIDER_100_COLLISION_AH1
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
+            }
+            "100collisionAH" => {
+                start_cells_coords = GLIDER_100_COLLISION_AH
+                    .iter()
+                    .map(|&p| p.into())
+                    .collect::<Vec<Point>>();
             }
             _ => {
                 let mut rng = rand::thread_rng();
@@ -140,7 +413,7 @@ fn main() -> GameResult {
                 .value_name("width")
                 .takes_value(true)
                 .required(false)
-                .default_value("500"),
+                .default_value("400"),
         )
         .arg(
             Arg::new("height")
@@ -150,13 +423,15 @@ fn main() -> GameResult {
                 .value_name("height")
                 .takes_value(true)
                 .required(false)
-                .default_value("500"),
+                .default_value("400"),
         )
         .arg(
             Arg::new("initial_state")
                 .short('s')
                 .long("initial-state")
-                .help("Initial state options: blinker, toad, glider, glider-gun, random")
+                .help(
+                    "Initial state options: blinker, toad, gliderA, gliderB, gliderC, gliderD, glider-gun, random, collisionAA180, collisionAB180, collisionAC180, collisionAD180, collisionBB180, collisionBC180, collisionBD180, collisionCC180, collisionCD180, collisionDD180, collisionAA90, collisionAB90, collisionAC90, collisionAD90, collisionBB90, collisionBC90, collisionBD90, collisionCC90, collisionCD90, collisionDD90, 100collisionAA , 100collisionAC , 100collisionAH, 100collisionAH1",
+                )
                 .value_name("initial_state")
                 .takes_value(true)
                 .required(false)
