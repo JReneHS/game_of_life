@@ -1,6 +1,9 @@
-//Second Glider Axis
+//Second Glider Axis 180
 const A: usize = 80 - 0; // 51 es distancia par | 50 es distancia impar
 const B: usize = 80; // 51 es distancia par | 50 es distancia impar
+
+//Second Glider Axis 90
+const F: usize = 80;
 
 //Second Glider Gun Axis
 const C: usize = 100;
@@ -140,12 +143,12 @@ pub const GLIDER_APP: [(usize, usize); 5] = [
     /*
     Glider A''
         ░█░
-        ██░
+        ░██
         █░█
     */
     (2 + A, 2 + B),
-    (1 + A, 3 + B),
-    (2 + A, 3 + B),
+    (3 + A, 2 + B),
+    (3 + A, 3 + B),
     (1 + A, 4 + B),
     (3 + A, 4 + B),
 ];
@@ -525,11 +528,11 @@ pub const GLIDER_COLLISION_AAI90: [(usize, usize); 10] = [
     (3, 3),
     (2, 4),
     //Second Glider
-    (2 + A, 2 + B),
-    (1 + A, 3 + B),
-    (2 + A, 3 + B),
-    (1 + A, 4 + B),
-    (3 + A, 4 + B),
+    (2, 2 + F),
+    (3, 2 + F),
+    (3, 3 + F),
+    (1, 4 + F),
+    (3, 4 + F),
 ];
 
 #[allow(dead_code)]
