@@ -3,7 +3,9 @@ const A: usize = 80 - 0; // 51 es distancia par | 50 es distancia impar
 const B: usize = 80; // 51 es distancia par | 50 es distancia impar
 
 //Second Glider Axis 90
+const AP: usize = 10;
 const F: usize = 80;
+const G: usize = 10 - 0;
 
 //Second Glider Gun Axis
 const C: usize = 100;
@@ -147,7 +149,7 @@ pub const GLIDER_APP: [(usize, usize); 5] = [
         █░█
     */
     (2 + A, 2 + B),
-    (3 + A, 2 + B),
+    (2 + A, 3 + B),
     (3 + A, 3 + B),
     (1 + A, 4 + B),
     (3 + A, 4 + B),
@@ -157,30 +159,30 @@ pub const GLIDER_APP: [(usize, usize); 5] = [
 pub const GLIDER_BPP: [(usize, usize); 5] = [
     /*
     Glider B''
-        ██░
+        ░██
         █░█
-        █░░
+        ░░█
     */
-    (1 + A, 2 + B),
     (2 + A, 2 + B),
-    (3 + A, 3 + B),
+    (3 + A, 2 + B),
     (1 + A, 3 + B),
-    (1 + A, 4 + B),
+    (3 + A, 3 + B),
+    (3 + A, 4 + B),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_CPP: [(usize, usize); 5] = [
     /*
     Glider C''
-        ░██
         ██░
-        ░░█
+        ░██
+        █░░
     */
-    (2 + A, 2 + B),
+    (1 + A, 2 + B),
     (3 + A, 2 + B),
     (2 + A, 3 + B),
-    (1 + A, 3 + B),
-    (3 + A, 4 + B),
+    (3 + A, 3 + B),
+    (1 + A, 4 + B),
 ];
 
 #[allow(dead_code)]
@@ -188,14 +190,14 @@ pub const GLIDER_DPP: [(usize, usize); 5] = [
     /*
     Glider D''
         ███
-        █░░
+        ░░█
         ░█░
     */
     (1 + A, 2 + B),
     (2 + A, 2 + B),
     (3 + A, 2 + B),
+    (3 + A, 3 + B),
     (2 + A, 4 + B),
-    (1 + A, 3 + B),
 ];
 
 //*************************** Collisions ***************************
@@ -522,321 +524,321 @@ pub const GLIDER_COLLISION_DDP180: [(usize, usize); 10] = [
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_AAI90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (3, 2),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (3 + AP, 2),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (2, 2 + F),
-    (3, 2 + F),
-    (3, 3 + F),
-    (1, 4 + F),
-    (3, 4 + F),
+    (2 + G, 2 + F),
+    (2 + G, 3 + F),
+    (3 + G, 3 + F),
+    (1 + G, 4 + F),
+    (3 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_ABI90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (3, 2),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (3 + AP, 2),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (1 + A, 2 + B),
-    (2 + A, 2 + B),
-    (3 + A, 3 + B),
-    (1 + A, 3 + B),
-    (1 + A, 4 + B),
+    (2 + G, 2 + F),
+    (3 + G, 2 + F),
+    (1 + G, 3 + F),
+    (3 + G, 3 + F),
+    (3 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_ACI90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (3, 2),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (3 + AP, 2),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (2 + A, 2 + B),
-    (3 + A, 2 + B),
-    (2 + A, 3 + B),
-    (1 + A, 3 + B),
-    (3 + A, 4 + B),
+    (1 + G, 2 + F),
+    (3 + G, 2 + F),
+    (2 + G, 3 + F),
+    (3 + G, 3 + F),
+    (1 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_ADI90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (3, 2),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (3 + AP, 2),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (1 + A, 2 + B),
-    (2 + A, 2 + B),
-    (3 + A, 2 + B),
-    (2 + A, 4 + B),
-    (1 + A, 3 + B),
+    (1 + G, 2 + F),
+    (2 + G, 2 + F),
+    (3 + G, 2 + F),
+    (3 + G, 3 + F),
+    (2 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_BBI90: [(usize, usize); 10] = [
     // First Glider
-    (1, 3),
-    (3, 2),
-    (3, 3),
-    (3, 4),
-    (2, 4),
+    (1 + AP, 3),
+    (3 + AP, 2),
+    (3 + AP, 3),
+    (3 + AP, 4),
+    (2 + AP, 4),
     //Second Glider
-    (1 + A, 2 + B),
-    (2 + A, 2 + B),
-    (3 + A, 3 + B),
-    (1 + A, 3 + B),
-    (1 + A, 4 + B),
+    (2 + G, 2 + F),
+    (3 + G, 2 + F),
+    (1 + G, 3 + F),
+    (3 + G, 3 + F),
+    (3 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_BCI90: [(usize, usize); 10] = [
     // First Glider
-    (1, 3),
-    (3, 2),
-    (3, 3),
-    (3, 4),
-    (2, 4),
+    (1 + AP, 3),
+    (3 + AP, 2),
+    (3 + AP, 3),
+    (3 + AP, 4),
+    (2 + AP, 4),
     //Second Glider
-    (2 + A, 2 + B),
-    (3 + A, 2 + B),
-    (2 + A, 3 + B),
-    (1 + A, 3 + B),
-    (3 + A, 4 + B),
+    (1 + G, 2 + F),
+    (3 + G, 2 + F),
+    (2 + G, 3 + F),
+    (3 + G, 3 + F),
+    (1 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_BDI90: [(usize, usize); 10] = [
     // First Glider
-    (1, 3),
-    (3, 2),
-    (3, 3),
-    (3, 4),
-    (2, 4),
+    (1 + AP, 3),
+    (3 + AP, 2),
+    (3 + AP, 3),
+    (3 + AP, 4),
+    (2 + AP, 4),
     //Second Glider
-    (1 + A, 2 + B),
-    (2 + A, 2 + B),
-    (3 + A, 2 + B),
-    (2 + A, 4 + B),
-    (1 + A, 3 + B),
+    (1 + G, 2 + F),
+    (2 + G, 2 + F),
+    (3 + G, 2 + F),
+    (3 + G, 3 + F),
+    (2 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_CCI90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (1, 4),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (1 + AP, 4),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (2 + A, 2 + B),
-    (3 + A, 2 + B),
-    (2 + A, 3 + B),
-    (1 + A, 3 + B),
-    (3 + A, 4 + B),
+    (1 + G, 2 + F),
+    (3 + G, 2 + F),
+    (2 + G, 3 + F),
+    (3 + G, 3 + F),
+    (1 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_CDI90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (1, 4),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (1 + AP, 4),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (1 + A, 2 + B),
-    (2 + A, 2 + B),
-    (3 + A, 2 + B),
-    (2 + A, 4 + B),
-    (1 + A, 3 + B),
+    (1 + G, 2 + F),
+    (2 + G, 2 + F),
+    (3 + G, 2 + F),
+    (3 + G, 3 + F),
+    (2 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_DDI90: [(usize, usize); 10] = [
     // First Glider
-    (2, 2),
-    (3, 3),
-    (1, 4),
-    (2, 4),
-    (3, 4),
+    (2 + AP, 2),
+    (3 + AP, 3),
+    (1 + AP, 4),
+    (2 + AP, 4),
+    (3 + AP, 4),
     //Second Glider
-    (1 + A, 2 + B),
-    (2 + A, 2 + B),
-    (3 + A, 2 + B),
-    (2 + A, 4 + B),
-    (1 + A, 3 + B),
+    (1 + G, 2 + F),
+    (2 + G, 2 + F),
+    (3 + G, 2 + F),
+    (3 + G, 3 + F),
+    (2 + G, 4 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_AAP90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (3, 2),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (3 + AP, 2),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (2 + 1 + A, 2 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
-    (2 + 1 + A, 3 + 1 + B),
-    (1 + 1 + A, 4 + 1 + B),
-    (3 + 1 + A, 4 + 1 + B),
+    (2 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 3 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (1 + 1 + G, 4 + 1 + F),
+    (3 + 1 + G, 4 + 1 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_ABP90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (3, 2),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (3 + AP, 2),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (1 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 2 + 1 + B),
-    (3 + 1 + A, 3 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
-    (1 + 1 + A, 4 + 1 + B),
+    (2 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 2 + 1 + F),
+    (1 + 1 + G, 3 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (3 + 1 + G, 4 + 1 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_ACP90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (3, 2),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (3 + AP, 2),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (2 + 1 + A, 2 + 1 + B),
-    (3 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 3 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
-    (3 + 1 + A, 4 + 1 + B),
+    (1 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 3 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (1 + 1 + G, 4 + 1 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_ADP90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (3, 2),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (3 + AP, 2),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (1 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 2 + 1 + B),
-    (3 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 4 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
+    (1 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (2 + 1 + G, 4 + 1 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_BBP90: [(usize, usize); 10] = [
     // First Glider
-    (1, 3),
-    (3, 2),
-    (3, 3),
-    (3, 4),
-    (2, 4),
+    (1 + AP, 3),
+    (3 + AP, 2),
+    (3 + AP, 3),
+    (3 + AP, 4),
+    (2 + AP, 4),
     //Second Glider
-    (1 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 2 + 1 + B),
-    (3 + 1 + A, 3 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
-    (1 + 1 + A, 4 + 1 + B),
+    (2 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 2 + 1 + F),
+    (1 + 1 + G, 3 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (3 + 1 + G, 4 + 1 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_BCP90: [(usize, usize); 10] = [
     // First Glider
-    (1, 3),
-    (3, 2),
-    (3, 3),
-    (3, 4),
-    (2, 4),
+    (1 + AP, 3),
+    (3 + AP, 2),
+    (3 + AP, 3),
+    (3 + AP, 4),
+    (2 + AP, 4),
     //Second Glider
-    (2 + 1 + A, 2 + 1 + B),
-    (3 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 3 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
-    (3 + 1 + A, 4 + 1 + B),
+    (1 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 3 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (1 + 1 + G, 4 + 1 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_BDP90: [(usize, usize); 10] = [
     // First Glider
-    (1, 3),
-    (3, 2),
-    (3, 3),
-    (3, 4),
-    (2, 4),
+    (1 + AP, 3),
+    (3 + AP, 2),
+    (3 + AP, 3),
+    (3 + AP, 4),
+    (2 + AP, 4),
     //Second Glider
-    (1 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 2 + 1 + B),
-    (3 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 4 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
+    (1 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (2 + 1 + G, 4 + 1 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_CCP90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (1, 4),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (1 + AP, 4),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (2 + 1 + A, 2 + 1 + B),
-    (3 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 3 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
-    (3 + 1 + A, 4 + 1 + B),
+    (1 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 3 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (1 + 1 + G, 4 + 1 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_CDP90: [(usize, usize); 10] = [
     // First Glider
-    (1, 2),
-    (1, 4),
-    (2, 3),
-    (3, 3),
-    (2, 4),
+    (1 + AP, 2),
+    (1 + AP, 4),
+    (2 + AP, 3),
+    (3 + AP, 3),
+    (2 + AP, 4),
     //Second Glider
-    (1 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 2 + 1 + B),
-    (3 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 4 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
+    (1 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (2 + 1 + G, 4 + 1 + F),
 ];
 
 #[allow(dead_code)]
 pub const GLIDER_COLLISION_DDP90: [(usize, usize); 10] = [
     // First Glider
-    (2, 2),
-    (3, 3),
-    (1, 4),
-    (2, 4),
-    (3, 4),
+    (2 + AP, 2),
+    (3 + AP, 3),
+    (1 + AP, 4),
+    (2 + AP, 4),
+    (3 + AP, 4),
     //Second Glider
-    (1 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 2 + 1 + B),
-    (3 + 1 + A, 2 + 1 + B),
-    (2 + 1 + A, 4 + 1 + B),
-    (1 + 1 + A, 3 + 1 + B),
+    (1 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 2 + 1 + F),
+    (3 + 1 + G, 3 + 1 + F),
+    (2 + 1 + G, 4 + 1 + F),
 ];
 //********************** Estructuras Complejas **********************************
 #[allow(dead_code)]
