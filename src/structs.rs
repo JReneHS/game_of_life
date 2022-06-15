@@ -5,7 +5,7 @@ const B: usize = 80; // 51 es distancia par | 50 es distancia impar
 //Second Glider Axis 90
 const AP: usize = 10;
 const F: usize = 80;
-const G: usize = 10 - 0;
+const G: usize = 10 + 1;
 
 //Second Glider Gun Axis
 const C: usize = 100;
@@ -179,7 +179,7 @@ pub const GLIDER_CPP: [(usize, usize); 5] = [
         █░░
     */
     (1 + A, 2 + B),
-    (3 + A, 2 + B),
+    (2 + A, 2 + B),
     (2 + A, 3 + B),
     (3 + A, 3 + B),
     (1 + A, 4 + B),
@@ -563,7 +563,7 @@ pub const GLIDER_COLLISION_ACI90: [(usize, usize); 10] = [
     (2 + AP, 4),
     //Second Glider
     (1 + G, 2 + F),
-    (3 + G, 2 + F),
+    (2 + G, 2 + F),
     (2 + G, 3 + F),
     (3 + G, 3 + F),
     (1 + G, 4 + F),
@@ -611,7 +611,7 @@ pub const GLIDER_COLLISION_BCI90: [(usize, usize); 10] = [
     (2 + AP, 4),
     //Second Glider
     (1 + G, 2 + F),
-    (3 + G, 2 + F),
+    (2 + G, 2 + F),
     (2 + G, 3 + F),
     (3 + G, 3 + F),
     (1 + G, 4 + F),
@@ -643,7 +643,7 @@ pub const GLIDER_COLLISION_CCI90: [(usize, usize); 10] = [
     (2 + AP, 4),
     //Second Glider
     (1 + G, 2 + F),
-    (3 + G, 2 + F),
+    (2 + G, 2 + F),
     (2 + G, 3 + F),
     (3 + G, 3 + F),
     (1 + G, 4 + F),
@@ -723,7 +723,7 @@ pub const GLIDER_COLLISION_ACP90: [(usize, usize); 10] = [
     (2 + AP, 4),
     //Second Glider
     (1 + 1 + G, 2 + 1 + F),
-    (3 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 2 + 1 + F),
     (2 + 1 + G, 3 + 1 + F),
     (3 + 1 + G, 3 + 1 + F),
     (1 + 1 + G, 4 + 1 + F),
@@ -771,7 +771,7 @@ pub const GLIDER_COLLISION_BCP90: [(usize, usize); 10] = [
     (2 + AP, 4),
     //Second Glider
     (1 + 1 + G, 2 + 1 + F),
-    (3 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 2 + 1 + F),
     (2 + 1 + G, 3 + 1 + F),
     (3 + 1 + G, 3 + 1 + F),
     (1 + 1 + G, 4 + 1 + F),
@@ -803,7 +803,7 @@ pub const GLIDER_COLLISION_CCP90: [(usize, usize); 10] = [
     (2 + AP, 4),
     //Second Glider
     (1 + 1 + G, 2 + 1 + F),
-    (3 + 1 + G, 2 + 1 + F),
+    (2 + 1 + G, 2 + 1 + F),
     (2 + 1 + G, 3 + 1 + F),
     (3 + 1 + G, 3 + 1 + F),
     (1 + 1 + G, 4 + 1 + F),
