@@ -5,7 +5,7 @@ const B: usize = 80; // 51 es distancia par | 50 es distancia impar
 //Second Glider Axis 90
 const AP: usize = 10;
 const F: usize = 80;
-const G: usize = 10 + 1;
+const G: usize = 10 + 2;
 
 //Second Glider Gun Axis
 const C: usize = 100;
