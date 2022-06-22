@@ -447,7 +447,7 @@ fn main() -> GameResult {
         .parse::<usize>()
         .unwrap();
     let initial_state = matches.value_of("initial_state").unwrap();
-    let screen_size = (700.0, 700.0);
+    let screen_size = (1100.0, 1100.0);
     let fps = 30;
     // Set configuration
     let config: Config = Config {
